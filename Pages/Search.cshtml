@@ -1,0 +1,15 @@
+﻿@page
+@using TourOfHeroes.Models;
+@model TourOfHeroes.Pages.SearchModel
+@{
+    Layout = null;
+}
+
+@foreach (Hero hero in Model.Heroes)
+{
+    <div class="bg-blue-400 shadow rounded-md w-full mx-auto mt-2">
+        <a asp-page="/Detail" asp-route-id="@hero.HeroID">
+            <h3 class="text-lg font-semibold ml-5 text-white py-5">@hero.Name</h3>
+        </a>
+    </div>
+}

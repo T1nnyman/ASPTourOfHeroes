@@ -1,0 +1,15 @@
+﻿@page
+@using TourOfHeroes.Models;
+@model TourOfHeroes.Pages.ListModel
+@{
+    Layout = null;
+}
+
+@foreach (Hero hero in Model.Heroes)
+{
+    <div class="flex flex-row rounded-sm overflow-hidden">
+        <div class="bg-blue-600 text-white p-2">@hero.HeroID</div>
+        <div class="w-full h-full bg-blue-200 text-black p-2">@hero.Name</div>
+        <div class="bg-white text-red-500 w-12 p-2 hover:cursor-pointer remove-hero" data-id="@hero.HeroID">X</div>
+    </div>
+}
